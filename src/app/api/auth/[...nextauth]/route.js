@@ -9,15 +9,15 @@ export const authOptions = {
       tenantId: process.env.AZURE_AD_TENANT_ID,
     }),
   ],
-  callbacks: {
-    async jwt({ token, account }) {
-      // IMPORTANT: Persist the access_token to the token right after sign in
-      if (account) {
-        token.idToken = account.id_token;
-      }
-      return token;
-    },
-  },
+  // callbacks: {
+  //   async jwt({ token, account }) {
+  //     // IMPORTANT: Persist the access_token to the token right after sign in
+  //     if (account) {
+  //       token.idToken = account.id_token;
+  //     }
+  //     return token;
+  //   },
+  // },
 };
 
 export const handler = NextAuth(authOptions);
